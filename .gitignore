@@ -1,0 +1,49 @@
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+*.env
+*.venv
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Dependencies
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code / PyCharm / IDE settings
+.vscode/
+.idea/
+*.iml
+
+# MyPy / Pytest / Coverage reports
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# FastAPI-specific
+instance/
+*.db
+*.sqlite3
+
+# Docker
+docker-compose.override.yml
+.envrc
