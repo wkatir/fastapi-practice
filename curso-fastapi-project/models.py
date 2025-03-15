@@ -1,27 +1,23 @@
 from pydantic import BaseModel
-from sqlmodel import SQLModel
-
+from sqlmodel import SQLModel, Field
 
 class CustomerBase(SQLModel):
-    name: str
-    description: str | None
-    email: str
-    age: int
-
+    name: str = Field(default=None)
+    description: str | None = Field(default=None)
+    email: str = Field(default=None)
+    age: int = Field(default=None)
 
 class CustomerCreate(CustomerBase):
     pass
 
-
 class Customer(CustomerBase, table=True):
-    id: int | None = None
+    id: int | None = Field(default=None,primary_key=True)
 
 
 class Transaction(BaseModel):
     id: int
-    ammount: int
+    amount: int
     description: str
-
 
 class Invoice(BaseModel):
     id: int
@@ -30,5 +26,5 @@ class Invoice(BaseModel):
     total: int
 
     @property
-    def ammount_total(self):
-        return sum(transaction.ammount for transaction in self.transactions)
+    def amount_total(self):
+        return sum(transaction.amount for transaction in self.transactions)
