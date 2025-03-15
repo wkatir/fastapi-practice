@@ -47,3 +47,5 @@ instance/
 # Docker
 docker-compose.override.yml
 .envrc
+
+.env
