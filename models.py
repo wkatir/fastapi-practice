@@ -17,8 +17,12 @@ class Customer(CustomerBase, table=True):
     id: int | None = Field(default=None,primary_key=True)
 
 
-class Transaction(BaseModel):
+class Transaction(SQLModel, table=True):
     id: int
+    amount: int
+    description: str
+
+class TransactionBase(SQLModel):
     amount: int
     description: str
 
